@@ -10,7 +10,7 @@
 
 **Circle CI**:
 
-[![Build Status](http://circleci-badges-max.herokuapp.com/img/gabrielsclimaco/GCS01?token=e91b0a2ff7b73fd875a9b91ccd500fd5194af9c8)](https://circleci.com/gh/gabrielsclimaco/GCS01)
+[![Build Status](https://circleci.com/gh/gabrielsclimaco/GCS01.png?circle-token=e91b0a2ff7b73fd875a9b91ccd500fd5194af9c8)](https://circleci.com/gh/gabrielsclimaco/GCS01)
 
 ----
 
