@@ -14,8 +14,8 @@ script:
   - flake8 --exclude django-basic/polls/migrations/,manage.py .
 
 before_deploy:
-  - docker build -t registry.heroku.com/gcs01-gabrielsclimaco-travis .
-  - heroku container:push --recursive
+  - docker build -t registry.heroku.com/gcs01-gabrielsclimaco-travis/web .
+  - docker push registry.heroku.com/gcs01-gabrielsclimaco-travis/web
 
 deploy:
   provider: heroku
