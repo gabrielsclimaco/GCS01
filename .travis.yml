@@ -15,6 +15,7 @@ script:
 
 before_deploy:
   - docker build -t registry.heroku.com/gcs01-gabrielsclimaco-travis/web .
+  - docker login -e _ -u _ --password=$HEROKU_API_KEY registry.heroku.com
   - docker push registry.heroku.com/gcs01-gabrielsclimaco-travis/web
 
 deploy:
