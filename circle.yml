@@ -1,17 +1,14 @@
 machine:
-  timezone:
-    America/Los_Angeles
+  services:
+    - docker
 
-  python:
-    version: 2.7
-
-dependencies:
-  pre:
-    - pip install django flake8
+compile:
+  override:
+    - docker-compose up -d
 
 test:
   override:
-    - python django-basic/manage.py test
+    - docker-compose run web python manage.py test
 
   post:
-    - flake8 --exclude django-basic/polls/migrations/,manage.py .
+    - docker-compose run web flake8 --exclude polls/migrations/,manage.py .
