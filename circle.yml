@@ -2,6 +2,10 @@ machine:
   services:
     - docker
 
+dependencies:
+  override:
+    - sudo pip install --upgrade docker-compose==1.3.0
+
 compile:
   override:
     - docker-compose up -d
