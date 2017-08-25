@@ -3,15 +3,6 @@ language: python
 python:
   - 2.7
 
-env:
-  - DOCKER_COMPOSE_VERSION=1.8.0
-
-before_install:
-  - sudo rm /usr/local/bin/docker-compose
-  - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
-  - chmod +x docker-compose
-  - sudo mv docker-compose /usr/local/bin
-
 install:
   - pip install django flake8
 
@@ -22,8 +13,12 @@ script:
   - python django-basic/manage.py test
   - flake8 --exclude django-basic/polls/migrations/,manage.py .
 
+before_deploy:
+  - docker build -t registry.heroku.com/gcs01-gabrielsclimaco-travis .
+  - heroku container:push --recursive
+
 deploy:
   provider: heroku
   api_key: $HEROKU_KEY
   app: gcs01-gabrielsclimaco-travis
-  run: "docker-compose up"
+  run: "docker exec registry.heroku.com/gcs01-gabrielsclimaco-travis python manage.py runserver 0:8000"
