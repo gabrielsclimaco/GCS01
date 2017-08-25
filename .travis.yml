@@ -12,3 +12,8 @@ before_script:
 script:
   - python django-basic/manage.py test
   - flake8 --exclude django-basic/polls/migrations/,manage.py .
+
+deploy:
+  provider: heroku
+  api_key: $HEROKU_KEY
+  app: gcs01-gabrielsclimaco-travis
