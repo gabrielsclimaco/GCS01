@@ -19,4 +19,5 @@ before_deploy:
 deploy:
   provider: heroku
   api_key: $HEROKU_KEY
+  buildpack: python
   app: gcs01-gabrielsclimaco-travis
