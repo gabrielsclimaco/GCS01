@@ -14,12 +14,9 @@ script:
   - flake8 --exclude django-basic/polls/migrations/,manage.py .
 
 before_deploy:
-  - docker build -t registry.heroku.com/gcs01-gabrielsclimaco-travis/web .
-  - docker login -e _ -u _ --password=$HEROKU_API_KEY registry.heroku.com
-  - docker push registry.heroku.com/gcs01-gabrielsclimaco-travis/web
+  - cd django-basic
 
 deploy:
   provider: heroku
   api_key: $HEROKU_KEY
   app: gcs01-gabrielsclimaco-travis
-  run: "docker exec registry.heroku.com/gcs01-gabrielsclimaco-travis python manage.py runserver 0:8000"
