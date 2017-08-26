@@ -14,8 +14,8 @@ script:
   - python manage.py test
   - flake8 --exclude polls/migrations/,manage.py .
 
-# before_deploy:
-#   - cd ./django-basic
+before_deploy:
+  - heroku buildpacks:set heroku/python
 
 deploy:
   provider: heroku
