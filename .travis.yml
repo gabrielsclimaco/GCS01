@@ -10,11 +10,12 @@ before_script:
   - python django-basic/manage.py migrate
 
 script:
-  - python django-basic/manage.py test
-  - flake8 --exclude django-basic/polls/migrations/,manage.py .
-
-before_deploy:
   - cd django-basic
+  - python manage.py test
+  - flake8 --exclude polls/migrations/,manage.py .
+
+# before_deploy:
+#   - cd ./django-basic
 
 deploy:
   provider: heroku
