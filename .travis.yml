@@ -15,7 +15,7 @@ script:
   - flake8 --exclude polls/migrations/,manage.py .
 
 before_deploy:
-  - heroku buildpacks:set heroku/python
+  - heroku buildpacks:set -a gcs01-gabrielsclimaco-travis heroku/python
 
 deploy:
   provider: heroku
