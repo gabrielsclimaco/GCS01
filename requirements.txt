@@ -1,1 +1,6 @@
-python-2.7
+Django==1.11.4
+virtualenv==15.1.0
+flake8==3.4.1
+pylint==1.7.2
+ipython==6.1.0
+pytest==3.2.1
