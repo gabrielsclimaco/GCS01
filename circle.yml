@@ -20,3 +20,9 @@ test:
 
   post:
     - docker-compose run web flake8 --exclude polls/migrations/,manage.py .
+
+deployment:
+  staging:
+    branch: master
+    heroku:
+      appname: gcs01-gabrielsclimaco-circle
