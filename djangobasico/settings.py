@@ -25,7 +25,10 @@ SECRET_KEY = 's7zw!j_b2yd=d9p7^cdmh1^5%br4+c_ha9@^4a+p!e@=atj7nb'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'gcs01-gabrielsclimaco-travis.herokuapp.com',
+    'gcs01-gabrielsclimaco-circle.herokuapp.com',
+]
 
 
 # Application definition
