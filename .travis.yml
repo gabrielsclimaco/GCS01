@@ -21,3 +21,5 @@ deploy:
   api_key:
     secure: $HEROKU_KEY
   app: gcs01-gabrielsclimaco-travis
+  run:
+    - "python manage.py migrate"
