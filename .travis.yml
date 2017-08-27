@@ -22,4 +22,4 @@ deploy:
     secure: $HEROKU_KEY
   app: gcs01-gabrielsclimaco-travis
   run:
-    - "python manage.py migrate"
+    - "heroku run python manage.py migrate"
