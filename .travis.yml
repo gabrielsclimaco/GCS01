@@ -7,15 +7,14 @@ install:
   - pip install django flake8
 
 before_script:
-  - python django-basic/manage.py migrate
+  - python manage.py migrate
 
 script:
-  - cd django-basic
   - python manage.py test
   - flake8 --exclude polls/migrations/,manage.py .
 
-before_deploy:
-  - heroku buildpacks:set -a gcs01-gabrielsclimaco-travis heroku/python
+# before_deploy:
+#   - heroku buildpacks:set -a gcs01-gabrielsclimaco-travis heroku/python
 
 deploy:
   provider: heroku

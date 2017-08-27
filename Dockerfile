@@ -6,8 +6,7 @@ RUN apt-get update &&\
 
 RUN mkdir /app
 WORKDIR /app
-ADD ./django-basic /app
+ADD . /app
 
 RUN python manage.py migrate
 # RUN python manage.py runserver 0.0.0.0:8000
-
