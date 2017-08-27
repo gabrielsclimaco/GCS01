@@ -1,1 +1,1 @@
-web: gunicorn djangobasico.wsgi --log-file -
+web: python manage.py runserver 0:8000
